@@ -1,0 +1,18 @@
+diff --git a/node_modules/@afipsdk/afip.js/src/Class/AfipWebService.js b/node_modules/@afipsdk/afip.js/src/Class/AfipWebService.js
+index 9312043..cecccfe 100644
+--- a/node_modules/@afipsdk/afip.js/src/Class/AfipWebService.js
++++ b/node_modules/@afipsdk/afip.js/src/Class/AfipWebService.js
+@@ -139,11 +139,12 @@ module.exports = class AfipWebService {
+ 			this.soapClient.setEndpoint(this.URL);
+ 		}
+ 
+-		await this.afip.TrackUsage(this.options['service'], operation, params);
++		// await this.afip.TrackUsage(this.options['service'], operation, params);
+ 
+ 		// Call to SOAP method
+ 		let [ result ] = await this.soapClient[operation+'Async'](params);
+ 		
++		console.log('lalala')
+ 		//Return response parsed as JSON
+ 		return result;
+ 	}
